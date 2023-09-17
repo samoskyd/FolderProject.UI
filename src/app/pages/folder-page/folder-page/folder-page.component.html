@@ -1,0 +1,17 @@
+<div *ngIf="folder">
+    <div class="header">
+      <h2>{{ folder!.name }}</h2>
+    </div>
+    <div class="content">
+      <ul>
+        <li *ngFor="let childFolder of children">
+          <a [routerLink]="['/folder', childFolder.id]">{{ childFolder.name }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer">
+      <a *ngIf="folder.parentId" (click)="goBack(folder.parentId)">Go Back</a>
+      <a (click)="goToMainDirectory()">Go to Main Directory</a>
+    </div>
+</div>
+  

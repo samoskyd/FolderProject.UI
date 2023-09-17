@@ -1,0 +1,9 @@
+<div>
+    <h2>Main Directory</h2>
+    <ul>
+      <li *ngFor="let folder of folders">
+        <a [routerLink]="['/folder', folder.id]">{{ folder.name }}</a>
+      </li>
+    </ul>
+</div>
+  
